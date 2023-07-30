@@ -4,18 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Composite implements Component {
+    private List<Component> components = new ArrayList<>();
 
-    private String name;
-    private List<Component> children = new ArrayList<Component>();
     public void add(Component child) {
-        children.add(child);
+        components.add(child);
     }
 
-    public Composite(String name) {
-        this.name = name;
+    public List<Component> getChildren() {
+        return components;
     }
 
-    public Composite() {
+    public void setChildren(List<? extends Component> components) {
+        components.clear();
+        //тут надо переписать, потому что
+        this.components.addAll(components);
+    }
+
+    public int getChildrenNumber() {
+       return components.size();
     }
 
     @Override
@@ -29,7 +35,14 @@ public class Composite implements Component {
     }
 
     @Override
+    public Component get(int number) {
+        return null;
+    }
+
+    @Override
     public void remove(Component component) {
 
     }
+
+
 }

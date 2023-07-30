@@ -5,5 +5,7 @@ public interface Component {
     Object getChild(int index);
     void operation();
 
+    Component get(int number);
+
     void remove (Component component);
 }

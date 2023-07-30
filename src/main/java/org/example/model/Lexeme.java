@@ -2,11 +2,11 @@ package org.example.model;
 
 public class Lexeme implements Component {
     private String value;
-    private LexemeType type;
+    private LexemeType lexemeType;
 
     public Lexeme(String value, LexemeType type) {
         this.value = value;
-        this.type = type;
+        this.lexemeType = type;
     }
 
     public static Lexeme word(String value) {
@@ -30,6 +30,11 @@ public class Lexeme implements Component {
     @Override
     public void operation() {
 
+    }
+
+    @Override
+    public Component get(int number) {
+        return null;
     }
 
     @Override
